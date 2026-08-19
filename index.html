@@ -22,6 +22,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" as="style">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.css">
 
   <script type="application/ld+json">
@@ -42,7 +43,10 @@
       "@type": "Person",
       "name": "Michael Krz",
       "jobTitle": "Piano and Voice Instructor"
-    }
+    },
+    "sameAs": [
+      "https://share.google/lvmWkYAiTzN25pvCe"
+    ]
   }
   </script>
 </head>
@@ -51,7 +55,7 @@
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="NW Piano & Voice" height="36">
+        <img src="images/logo-banner.png" alt="NW Piano & Voice" height="36">
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation"><span></span></button>
       <nav class="main-nav">
@@ -69,20 +73,19 @@
   <div class="nav-overlay"></div>
 
   <section class="hero">
-    <img src="images/logo.png" alt="NW Piano & Voice" class="hero__logo">
-    <p class="hero__tagline">Private in-home lessons</p>
-    <p class="hero__sub">Piano and voice instruction for all ages and skill levels in Chicago's northwest suburbs. Your first lesson is free.</p>
-    <div class="hero__cta">
-      <a href="contact.html" class="btn btn--gold btn--large">Schedule a Free Lesson</a>
-    </div>
     <!-- Replace VIDEO_ID_HERE with the YouTube video ID -->
-    <div class="video-placeholder" id="hero-video" style="margin-top: 3rem; animation: fadeUp 0.6s 0.5s var(--ease) both;">
+    <div class="video-placeholder" id="hero-video" style="margin-bottom: 2.25rem; animation: fadeUp 0.7s var(--ease) both;">
       <div class="video-placeholder__inner">
         <div class="video-placeholder__play">
           <svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>
         </div>
         <span class="video-placeholder__text">Watch Video</span>
       </div>
+    </div>
+    <p class="hero__tagline">Private in-home lessons</p>
+    <p class="hero__sub">Piano and voice instruction for all ages and skill levels in Chicago's northwest suburbs. Your first lesson is free.</p>
+    <div class="hero__cta">
+      <a href="contact.html" class="btn btn--gold btn--large">Schedule a Free Lesson</a>
     </div>
   </section>
 
@@ -94,7 +97,7 @@
           <div class="stat__label">Years Teaching</div>
         </div>
         <div class="stat">
-          <div class="stat__number">100s</div>
+          <div class="stat__number">100's</div>
           <div class="stat__label">of Students</div>
         </div>
         <div class="stat">
@@ -166,25 +169,38 @@
       <div class="testimonials__heading reveal">
         <span class="section-label">What Parents & Students Say</span>
       </div>
-      <div class="testimonials__grid reveal">
-        <div class="testimonial">
-          <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial__text">"Michael is an incredible teacher. My daughter has been taking lessons for over a year and her progress has been amazing. He makes every lesson fun and challenging."</p>
-          <div class="testimonial__author">Parent</div>
-          <div class="testimonial__detail">Arlington Heights</div>
+      <div class="testimonials-swiper swiper reveal">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="testimonial-slide" data-text="Michael is an incredible teacher. My daughter has been taking lessons for over a year and her progress has been amazing. He makes every lesson fun and challenging." data-author="&mdash; Parent, Arlington Heights">
+              <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="testimonial-text">"Michael is an incredible teacher. My daughter has been taking lessons for over a year and her progress has been amazing. He makes every lesson fun and challenging."</div>
+              <div class="testimonial-author">&mdash; Parent, Arlington Heights</div>
+              <div class="tap-hint">tap to read more</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-slide" data-text="I started piano as a complete beginner in my 40s and Michael made me feel comfortable from the very first lesson. Patient, knowledgeable, and genuinely encouraging." data-author="&mdash; Adult Student, Palatine">
+              <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="testimonial-text">"I started piano as a complete beginner in my 40s and Michael made me feel comfortable from the very first lesson. Patient, knowledgeable, and genuinely encouraging."</div>
+              <div class="testimonial-author">&mdash; Adult Student, Palatine</div>
+              <div class="tap-hint">tap to read more</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-slide" data-text="The recitals are such a wonderful touch. Our kids look forward to performing and it gives them real confidence. Highly recommend Northwest Piano." data-author="&mdash; Parent, Schaumburg">
+              <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="testimonial-text">"The recitals are such a wonderful touch. Our kids look forward to performing and it gives them real confidence. Highly recommend Northwest Piano."</div>
+              <div class="testimonial-author">&mdash; Parent, Schaumburg</div>
+              <div class="tap-hint">tap to read more</div>
+            </div>
+          </div>
         </div>
-        <div class="testimonial">
-          <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial__text">"I started piano as a complete beginner in my 40s and Michael made me feel comfortable from the very first lesson. Patient, knowledgeable, and genuinely encouraging."</p>
-          <div class="testimonial__author">Adult Student</div>
-          <div class="testimonial__detail">Palatine</div>
-        </div>
-        <div class="testimonial">
-          <div class="testimonial__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial__text">"The recitals are such a wonderful touch. Our kids look forward to performing and it gives them real confidence. Highly recommend Northwest Piano."</p>
-          <div class="testimonial__author">Parent</div>
-          <div class="testimonial__detail">Schaumburg</div>
-        </div>
+      </div>
+      <div class="testimonials-nav">
+        <button class="testimonials-prev" aria-label="Previous testimonial">&#8249;</button>
+        <span class="testimonials-count" id="testimonialCount">1 / 3</span>
+        <button class="testimonials-next" aria-label="Next testimonial">&#8250;</button>
       </div>
     </div>
   </section>
@@ -193,7 +209,6 @@
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
-          <img src="images/logo.png" alt="NW Piano & Voice">
           <p class="footer__tagline">Private in-home lessons for all ages in Chicago's northwest suburbs.</p>
         </div>
         <div class="footer__contact">
@@ -216,6 +231,56 @@
     </div>
   </footer>
 
+  <div class="testimonial-popup" id="testimonialPopup">
+    <div class="testimonial-popup-card">
+      <button class="testimonial-popup-close" id="popupClose" aria-label="Close">&times;</button>
+      <div class="testimonial-popup-text" id="popupText"></div>
+      <div class="testimonial-popup-author" id="popupAuthor"></div>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const totalSlides = 3;
+    const countEl = document.getElementById('testimonialCount');
+    new Swiper('.testimonials-swiper', {
+      loop: true,
+      navigation: {
+        nextEl: '.testimonials-next',
+        prevEl: '.testimonials-prev'
+      },
+      grabCursor: true,
+      on: {
+        slideChange: function () {
+          countEl.textContent = (this.realIndex % totalSlides) + 1 + ' / ' + totalSlides;
+        }
+      }
+    });
+
+    setTimeout(() => {
+      document.querySelectorAll('.testimonial-slide').forEach((slide) => {
+        const text = slide.querySelector('.testimonial-text');
+        if (text.scrollHeight > slide.clientHeight - 60) slide.classList.add('overflowing');
+      });
+    }, 400);
+
+    const popup = document.getElementById('testimonialPopup');
+    const popupText = document.getElementById('popupText');
+    const popupAuthor = document.getElementById('popupAuthor');
+    const popupClose = document.getElementById('popupClose');
+    document.querySelectorAll('.testimonial-slide').forEach((slide) => {
+      slide.addEventListener('click', () => {
+        if (!slide.classList.contains('overflowing')) return;
+        popupText.innerHTML = '"' + slide.dataset.text + '"';
+        popupAuthor.innerHTML = slide.dataset.author;
+        popup.classList.add('open');
+      });
+    });
+    popupClose.addEventListener('click', () => popup.classList.remove('open'));
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) popup.classList.remove('open');
+    });
+  </script>
 </body>
 </html>

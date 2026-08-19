@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Dev/helper scripts (not part of the site)
+*.py
+download-images.sh
+TODO-michael.md
+
+# Editor
+.vscode/
+.idea/

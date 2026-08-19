@@ -20,6 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
   <link rel="stylesheet" href="../css/style.css">
   <script type="application/ld+json">
   {
@@ -29,12 +30,8 @@
     "serviceType": "Music Education",
     "description": "Private, in-home piano and voice lessons in Schaumburg, IL for all ages and skill levels. First lesson is free.",
     "provider": {
-      "@type": "LocalBusiness",
-      "name": "Northwest Piano & Voice",
-      "url": "https://nwpianolessons.com",
-      "telephone": "+1-847-840-8571",
-      "email": "michael@nwpianolessons.com",
-      "priceRange": "$70/50min"
+      "@id": "https://nwpianolessons.com/#business",
+      "name": "Northwest Piano & Voice"
     },
     "areaServed": {
       "@type": "City",
@@ -56,6 +53,39 @@
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://nwpianolessons.com/"},
       {"@type": "ListItem", "position": 2, "name": "Locations", "item": "https://nwpianolessons.com/locations"},
       {"@type": "ListItem", "position": 3, "name": "Schaumburg", "item": "https://nwpianolessons.com/locations/schaumburg"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://nwpianolessons.com/locations/schaumburg#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much do piano lessons in Schaumburg cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lessons are $70 for a 50-minute private, in-home lesson in Schaumburg. Your first lesson is completely free, with no obligation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you travel to Schaumburg for lessons?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes \u2014 all lessons are in-home. Michael comes to you anywhere in Schaumburg and the surrounding northwest suburbs, so there's no driving to a studio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you teach both piano and voice in Schaumburg?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Michael teaches both piano and voice (singing) to students of all ages and skill levels, from complete beginners to college-level performers."
+        }
+      }
     ]
   }
   </script>
@@ -131,6 +161,32 @@
     </div>
   </section>
 
+  <section class="section--flush">
+    <div class="container">
+      <div class="faq reveal">
+        <span class="section-label">Schaumburg FAQs</span>
+        <div class="faq-item">
+          <button class="faq-question">How much do piano lessons in Schaumburg cost?</button>
+          <div class="faq-answer">
+            <p>Lessons are $70 for a 50-minute private, in-home lesson in Schaumburg. Your first lesson is completely free, with no obligation.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do you travel to Schaumburg for lessons?</button>
+          <div class="faq-answer">
+            <p>Yes &mdash; all lessons are in-home. Michael comes to you anywhere in Schaumburg and the surrounding northwest suburbs, so there's no driving to a studio.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do you teach both piano and voice in Schaumburg?</button>
+          <div class="faq-answer">
+            <p>Yes. Michael teaches both piano and voice (singing) to students of all ages and skill levels, from complete beginners to college-level performers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
       <div class="service-area reveal">
@@ -172,7 +228,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <span class="footer__copy">&copy; 2025 Northwest Piano & Voice</span>
+        <span class="footer__copy">&copy; 2026 Northwest Piano & Voice &middot; Updated August 2026</span>
         <div class="footer__bottom-links">
           <a href="https://share.google/lvmWkYAiTzN25pvCe" target="_blank" rel="noopener">Google Reviews</a>
         </div>

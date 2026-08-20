@@ -9,3 +9,6 @@ TODO-michael.md
 # Editor
 .vscode/
 .idea/
+
+# Parked files
+_to_delete/

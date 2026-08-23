@@ -159,6 +159,18 @@ img { max-width: 100%; height: auto; display: block; }
 .main-nav a.active { color: var(--gold); }
 
 
+/* Desktop: centered nav, no Home item (logo is home) */
+@media (min-width: 769px) {
+  .site-header .container { position: relative; }
+  .main-nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .main-nav li:first-child { display: none; }
+}
+
 .nav-overlay {
   display: none;
   position: fixed;
@@ -200,20 +212,26 @@ img { max-width: 100%; height: auto; display: block; }
   pointer-events: none;
 }
 
-.hero__tagline {
+.hero__headline {
   font-family: var(--font-display);
-  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-size: clamp(1.9rem, 4.2vw, 3rem);
   font-weight: 400;
+  line-height: 1.2;
+  color: var(--text);
+  max-width: 720px;
+  margin-bottom: 2.25rem;
+  animation: fadeUp 0.6s var(--ease) both;
+}
+
+.hero__amp {
   font-style: italic;
-  color: var(--text-dim);
-  margin-bottom: 1rem;
-  animation: fadeUp 0.6s 0.2s var(--ease) both;
+  color: var(--gold);
 }
 
 .hero__sub {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  max-width: 420px;
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  max-width: 440px;
   line-height: 1.8;
   margin-bottom: 2rem;
   animation: fadeUp 0.6s 0.3s var(--ease) both;
@@ -408,39 +426,34 @@ img { max-width: 100%; height: auto; display: block; }
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
+  gap: 2.6rem 3rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .feature {
-  padding: 2.4rem 2rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  transition: border-color 0.15s, background 0.15s;
-}
-.feature:hover {
-  border-color: var(--border-hover);
-  background: rgba(255,255,255,0.02);
+  text-align: center;
 }
 
 .feature__icon {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   color: var(--gold);
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.7rem;
 }
 
 .feature__title {
-  font-size: 0.78rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 400;
   color: var(--text);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.4rem;
 }
 
 .feature__desc {
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* --- FAQ --- */
@@ -544,53 +557,43 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--gold);
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  max-width: 800px;
-  margin: 0 auto;
+.contact-lines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
 }
 
-.contact-card {
-  background: var(--bg-card);
-  padding: 3rem 2rem;
-  text-align: center;
-  text-decoration: none;
-  transition: background 0.15s;
+.contact-line {
   display: block;
-}
-.contact-card:hover { background: var(--bg-elevated); }
-
-.contact-card__icon {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  color: var(--gold);
+  text-align: center;
 }
 
-.contact-card__label {
+.contact-line__label {
+  display: block;
   font-size: 0.65rem;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--gold);
   font-weight: 600;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
-.contact-card__value {
+.contact-line__value {
+  display: block;
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-style: italic;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
   color: var(--text);
+  transition: color 0.15s;
 }
+.contact-line:hover .contact-line__value { color: var(--gold); }
 
-.contact-card__hint {
+.contact-line__hint {
+  display: block;
   font-size: 0.78rem;
   color: var(--text-muted);
-  margin-top: 0.6rem;
+  margin-top: 0.45rem;
 }
 
 /* --- SERVICE AREA --- */
@@ -666,8 +669,9 @@ img { max-width: 100%; height: auto; display: block; }
 
 .opera-table {
   width: 100%;
+  max-width: 760px;
   border-collapse: collapse;
-  margin: 1rem 0;
+  margin: 1rem auto;
 }
 
 .opera-table th {
@@ -690,7 +694,10 @@ img { max-width: 100%; height: auto; display: block; }
 .opera-table tbody tr { transition: background 0.15s; }
 .opera-table tbody tr:hover { background: var(--bg-card); }
 
-.training-section { margin-top: 2.5rem; }
+.training-section {
+  max-width: 760px;
+  margin: 2.5rem auto 0;
+}
 
 .training-section h3 {
   font-family: var(--font-display);
@@ -717,42 +724,26 @@ img { max-width: 100%; height: auto; display: block; }
 .locations-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 1.6rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .location-item {
   display: block;
-  padding: 1.15rem 1.4rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  font-size: 0.95rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.4rem;
   font-weight: 400;
   text-align: center;
   color: var(--text-dim);
-  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  transition: color 0.15s;
 }
-.location-item:hover {
-  color: var(--gold);
-  border-color: var(--border-hover);
-  background: rgba(255,255,255,0.02);
-}
+.location-item:hover { color: var(--gold); }
 
 @media (max-width: 600px) {
-  .locations-list { grid-template-columns: 1fr; gap: 0; }
-  .location-item {
-    border: none;
-    border-bottom: 1px solid var(--border);
-    border-radius: 0;
-    text-align: left;
-    padding: 1rem 0;
-    transition: color 0.15s, padding-left 0.15s;
-  }
-  .location-item:first-child { border-top: 1px solid var(--border); }
-  .location-item:hover {
-    background: none;
-    border-color: var(--border);
-    padding-left: 0.5rem;
-  }
+  .locations-list { grid-template-columns: 1fr; gap: 1.1rem; }
+  .location-item { font-size: 1.25rem; }
 }
 
 /* --- GUIDE LINKS --- */
@@ -773,6 +764,74 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .guide-link:hover { color: var(--gold); }
+
+/* --- RECITALS --- */
+.recital-hero {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  margin-top: 64px;
+}
+
+.recital-hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.recital-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85) 0%,
+    rgba(0,0,0,0.4) 40%,
+    rgba(0,0,0,0.15) 100%
+  );
+}
+
+.recital-hero__content {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 4rem;
+}
+
+.recital-hero__content .section-title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+}
+
+.recital-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.recital-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.recital-video {
+  width: 100%;
+  border-radius: var(--radius);
+  background: #000;
+}
+
+@media (max-width: 600px) {
+  .recital-hero { min-height: 50vh; }
+  .recital-hero__content { padding-bottom: 2.5rem; }
+  .recital-gallery { grid-template-columns: 1fr; gap: 1rem; }
+}
 
 /* --- ARTICLES --- */
 .article {
@@ -1099,8 +1158,7 @@ img { max-width: 100%; height: auto; display: block; }
    =========================== */
 
 @media (max-width: 900px) {
-  .features { grid-template-columns: repeat(2, 1fr); }
-  .contact-grid { grid-template-columns: 1fr; }
+  .features { grid-template-columns: repeat(2, 1fr); gap: 2.2rem 2rem; }
   .testimonials-swiper .swiper-wrapper { height: 250px; }
   .footer__inner { flex-direction: column; gap: 1.5rem; align-items: center; text-align: center; }
   .footer__tagline { max-width: none; }
@@ -1141,8 +1199,7 @@ img { max-width: 100%; height: auto; display: block; }
   .split { grid-template-columns: 1fr; gap: 2rem; }
   .split--reverse { direction: ltr; }
 
-  .features { grid-template-columns: 1fr; }
-  .feature { padding: 2rem 1.5rem; }
+  .features { grid-template-columns: 1fr; gap: 2rem; }
 
   .training-grid { grid-template-columns: 1fr; }
 
